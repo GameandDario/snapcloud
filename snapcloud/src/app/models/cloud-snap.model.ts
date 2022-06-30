@@ -1,9 +1,8 @@
 export class CloudSnap {
-  constructor(
-    public title: string,
-    public description: string,
-    public createdDate: Date,
-    public imgUrl: string,
-    public snaps: number
-  ) {}
+  title!: string;
+  description!: string;
+  createdDate!: Date;
+  imgUrl!: string;
+  snaps!: number;
+  location?: string;
 }
