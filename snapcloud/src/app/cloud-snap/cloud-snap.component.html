@@ -1,8 +1,10 @@
 <div class="cloud-snap-card">
-  <h2>{{ title }}</h2>
-  <p>Mis en ligne le {{ createdDate }}</p>
-  <img [src]="imgUrl" [alt]="title" />
-  <p>{{ description }}</p>
-  <button (click)="onAddSnap()">J'aime !</button>
-  <p>👍 {{ snaps }}</p>
+  <h2>{{ cloudSnap.title }}</h2>
+  <p>Mis en ligne le {{ cloudSnap.createdDate }}</p>
+  <img [src]="cloudSnap.imgUrl" [alt]="cloudSnap.title" />
+  <p>{{ cloudSnap.description }}</p>
+
+  <p>
+    <button (click)="onAddSnap()">{{ btnMsg }}</button>👍 {{ cloudSnap.snaps }}
+  </p>
 </div>
