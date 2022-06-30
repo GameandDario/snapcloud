@@ -3,6 +3,9 @@
   <p>Mis en ligne le {{ cloudSnap.createdDate }}</p>
   <img [src]="cloudSnap.imgUrl" [alt]="cloudSnap.title" />
   <p>{{ cloudSnap.description }}</p>
+  <p *ngIf="cloudSnap.location === 'Europe'">
+    Photo prise en {{ cloudSnap.location }}
+  </p>
 
   <p>
     <button (click)="onAddSnap()">{{ btnMsg }}</button>👍 {{ cloudSnap.snaps }}

@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
       imgUrl:
         'https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/7/2/c/72cf661c7f_50078048_bwo12339.jpg',
       snaps: 6,
+      location: 'Europe',
     };
     this.my2Cloud = {
       title: 'Cirrus en Australie',
