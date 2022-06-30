@@ -1,3 +1,5 @@
-<app-cloud-snap [cloudSnap]="myCloud"></app-cloud-snap>
-<app-cloud-snap [cloudSnap]="my2Cloud"></app-cloud-snap>
-<app-cloud-snap [cloudSnap]="my3Cloud"></app-cloud-snap>
+<!-- Utilisation de ditective *ngFor pour intérer sur tableau CloudSnaps-->
+<app-cloud-snap
+  *ngFor="let element of CloudSnaps"
+  [cloudSnap]="element"
+></app-cloud-snap>
