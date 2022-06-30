@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
         createdDate: new Date(),
         imgUrl:
           'https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/7/2/c/72cf661c7f_50078048_bwo12339.jpg',
-        snaps: 6,
+        snaps: 213,
         location: 'Europe',
       },
       {

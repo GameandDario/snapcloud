@@ -8,6 +8,9 @@
   </p>
 
   <p>
-    <button (click)="onAddSnap()">{{ btnMsg }}</button>👍 {{ cloudSnap.snaps }}
+    <button (click)="onAddSnap()">{{ btnMsg }}</button
+    ><span [ngStyle]="{ color: 'rgb(0,' + cloudSnap.snaps + ',0 )' }"
+      >👍 {{ cloudSnap.snaps }}</span
+    >
   </p>
 </div>
