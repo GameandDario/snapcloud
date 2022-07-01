@@ -6,6 +6,7 @@
   <p *ngIf="cloudSnap.location === 'Europe'">
     Photo prise en {{ cloudSnap.location }}
   </p>
+  <p>Ajout d'un nombre pour démo pipe : {{ 0.473 | percent }}</p>
 
   <p>
     <button (click)="onAddSnap()">{{ btnMsg }}</button>
