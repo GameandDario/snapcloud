@@ -1,4 +1,5 @@
 export class CloudSnap {
+  id!: number;
   title!: string;
   description!: string;
   createdDate!: Date;

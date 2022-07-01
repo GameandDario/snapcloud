@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CloudSnap } from '../models/cloud-snap.model';
+import { CloudSnapsService } from '../services/cloud-snaps-service';
 
 @Component({
   selector: 'app-cloud-snap',
@@ -19,6 +20,7 @@ export class CloudSnapComponent implements OnInit {
   isSnap!: boolean;
   btnMsg!: string;
 
+  constructor(private cloudSnapsService: CloudSnapsService) {}
   //initialisation
   ngOnInit() {
     this.isSnap = false;
@@ -26,13 +28,15 @@ export class CloudSnapComponent implements OnInit {
   }
 
   //méthodes
-  onAddSnap() {
+  onSnap() {
     if (this.isSnap == false) {
-      this.cloudSnap.snaps++;
+      //this.cloudSnap.snaps++;
+      this.cloudSnapsService.snapCloudSnapById(this.cloudSnap.id, 'snap');
       this.isSnap = true;
       this.btnMsg = 'Finalement non ?';
     } else {
-      this.cloudSnap.snaps--;
+      //this.cloudSnap.snaps--;
+      this.cloudSnapsService.snapCloudSnapById(this.cloudSnap.id, 'unsnap');
       this.btnMsg = 'Clique si tu aimes';
       this.isSnap = false;
     }

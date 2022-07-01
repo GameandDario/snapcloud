@@ -9,7 +9,7 @@
   <p>Ajout d'un nombre pour démo pipe : {{ 0.473 | percent }}</p>
 
   <p>
-    <button (click)="onAddSnap()">{{ btnMsg }}</button>
+    <button (click)="onSnap()">{{ btnMsg }}</button>
     <!-- ajout d'une teinte bleue en fonction du nombre de snaps -->
     <span [ngStyle]="{ color: 'rgb(0,0,' + cloudSnap.snaps + ' )' }"
       >👍 {{ cloudSnap.snaps }}</span
