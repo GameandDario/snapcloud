@@ -14,7 +14,10 @@ export class CloudSnapListComponent implements OnInit {
   constructor(private cloudSnapsService: CloudSnapsService) {}
 
   ngOnInit() {
-    //initialisation
-    this.CloudSnaps = this.cloudSnapsService.cloudSnaps;
+    //initialisation depuis tableau d'un service
+    //this.CloudSnaps = this.cloudSnapsService.cloudSnaps;
+
+    //initialisation depuis méthode d'un service (utlisée quand appel vers serveur)
+    this.CloudSnaps = this.cloudSnapsService.getAllCloudSnaps();
   }
 }

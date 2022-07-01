@@ -35,4 +35,8 @@ export class CloudSnapsService {
       snaps: 4,
     },
   ];
+  // implémentation d'une méthode pour récuperer tous les Elements du tableau CloudSnaps
+  getAllCloudSnaps(): CloudSnap[] {
+    return this.cloudSnaps;
+  }
 }
