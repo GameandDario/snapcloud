@@ -30,3 +30,18 @@
     }
   }
 }
+
+.snapped {
+  background-color: #7fafaf;
+  color: #122b44;
+  button {
+    box-shadow: rgb(106, 193, 193) 3px 3px 7px;
+    color: #122b44;
+    &:hover {
+      background-color: rgb(139, 192, 192);
+    }
+    &:active {
+      box-shadow: rgb(139, 192, 192) 0 0 5px;
+    }
+  }
+}
