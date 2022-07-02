@@ -7,10 +7,18 @@ import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 import { CloudSnapListComponent } from './cloud-snap-list/cloud-snap-list.component';
 import { HeaderComponent } from './header/header.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
-  declarations: [AppComponent, CloudSnapComponent, CloudSnapListComponent, HeaderComponent],
-  imports: [BrowserModule],
+  declarations: [
+    AppComponent,
+    CloudSnapComponent,
+    CloudSnapListComponent,
+    HeaderComponent,
+    LandingPageComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
   bootstrap: [AppComponent],
 })
