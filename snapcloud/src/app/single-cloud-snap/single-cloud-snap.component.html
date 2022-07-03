@@ -1,0 +1,19 @@
+<div class="cloud-snap-card" [ngClass]="{ snapped: isSnap === true }">
+  <h2>{{ cloudSnap.title | uppercase }}</h2>
+  <p>Mis en ligne le {{ cloudSnap.createdDate | date: "longDate" }}</p>
+  <img [src]="cloudSnap.imgUrl" [alt]="cloudSnap.title" />
+  <p>{{ cloudSnap.description }}</p>
+  <p *ngIf="cloudSnap.location === 'Europe'">
+    Photo prise en {{ cloudSnap.location }}
+  </p>
+  <p>Ajout d'un nombre pour démo pipe : {{ 0.473 | percent }}</p>
+
+  <p>
+    <button (click)="onSnap()">{{ btnMsg }}</button>
+    <!-- ajout d'une teinte bleue en fonction du nombre de snaps -->
+    <span [ngStyle]="{ color: 'rgb(0,0,' + cloudSnap.snaps + ' )' }"
+      >👍 {{ cloudSnap.snaps }}</span
+    >
+  </p>
+  <a class="back-link" routerLink="/cloudsnaps">Retour</a>
+</div>

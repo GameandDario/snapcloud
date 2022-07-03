@@ -6,9 +6,6 @@
   box-shadow: lightgray 4px 4px 20px;
   img {
     width: 100%;
-    height: 7rem;
-    border-radius: 0.25rem;
-    object-fit: cover;
   }
   h2 {
     margin-bottom: 0;
@@ -32,9 +29,13 @@
       box-shadow: lightgray 0 0 5px;
     }
   }
+  .back-link {
+    font-size: small;
+    color: #122b44;
+  }
 }
 
-/* .snapped {
+.snapped {
   background-color: #7fafaf;
   color: #122b44;
   button {
@@ -48,4 +49,3 @@
     }
   }
 }
- */

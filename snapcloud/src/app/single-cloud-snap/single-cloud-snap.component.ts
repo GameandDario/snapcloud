@@ -1,16 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CloudSnap } from '../models/cloud-snap.model';
 import { CloudSnapsService } from '../services/cloud-snaps-service';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-cloud-snap',
-  templateUrl: './cloud-snap.component.html',
-  styleUrls: ['./cloud-snap.component.scss'],
+  selector: 'app-single-cloud-snap',
+  templateUrl: './single-cloud-snap.component.html',
+  styleUrls: ['./single-cloud-snap.component.scss'],
 })
-export class CloudSnapComponent implements OnInit {
+export class SingleCloudSnapComponent implements OnInit {
   //initialisation depuis model
-  @Input() cloudSnap!: CloudSnap;
+  cloudSnap!: CloudSnap;
 
   // déclaration propriétés
   /*  title!: string;
@@ -23,19 +23,19 @@ export class CloudSnapComponent implements OnInit {
 
   constructor(
     private cloudSnapsService: CloudSnapsService,
-    private router: Router
+    private route: ActivatedRoute
   ) {}
-
   //initialisation
   ngOnInit() {
     this.isSnap = false;
     this.btnMsg = 'Vous aimez ?';
+
+    //récupérer l'id du composant
+    const snapId = +this.route.snapshot.params['id'];
+    this.cloudSnap = this.cloudSnapsService.getCloudSnapById(snapId);
   }
 
   //méthodes
-  onViewCloudSnap() {
-    this.router.navigateByUrl(`cloudsnaps/${this.cloudSnap.id}`);
-  }
   onSnap() {
     if (this.isSnap == false) {
       //this.cloudSnap.snaps++;
