@@ -9,6 +9,7 @@ import { CloudSnapListComponent } from './cloud-snap-list/cloud-snap-list.compon
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SingleCloudSnapComponent } from './single-cloud-snap/single-cloud-snap.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     CloudSnapListComponent,
     HeaderComponent,
     LandingPageComponent,
+    SingleCloudSnapComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
