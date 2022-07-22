@@ -7,11 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent implements OnInit {
+  userEmail: string = 'votreemail@email.com';
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
   //méthodes
   linkTo() {
     this.router.navigateByUrl('cloudsnaps');
+  }
+  onSubmitForm() {
+    console.log(this.userEmail);
   }
 }
