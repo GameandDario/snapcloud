@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CloudSnap } from '../models/cloud-snap.model';
-
+import { CloudSnapsService } from '../services/cloud-snaps-service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-new-cloud-snap',
   templateUrl: './new-cloud-snap.component.html',
@@ -14,7 +15,11 @@ export class NewCloudSnapComponent implements OnInit {
   cloudSnapPreview$!: Observable<CloudSnap>;
   urlRegex!: RegExp;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private cloudSnapsService: CloudSnapsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.urlRegex =
@@ -44,6 +49,8 @@ export class NewCloudSnapComponent implements OnInit {
     );
   }
   onSubmitForm() {
-    console.log(this.cloudForm.value);
+    //console.log(this.cloudForm.value);
+    this.cloudSnapsService.addNewCloudSnap(this.cloudForm.value);
+    this.router.navigateByUrl('/cloudsnaps');
   }
 }

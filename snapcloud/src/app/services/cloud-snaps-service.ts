@@ -58,4 +58,22 @@ export class CloudSnapsService {
     const cloudSnap = this.getCloudSnapById(cloudSnapId);
     snapType === 'snap' ? cloudSnap.snaps++ : cloudSnap.snaps--;
   }
+  addNewCloudSnap(formValue: {
+    title: string;
+    description: string;
+    imgUrl: string;
+    location?: string;
+  }): void {
+    const cloudSnap: CloudSnap = {
+      ...formValue,
+      createdDate: new Date(),
+      snaps: 0,
+      id: this.cloudSnaps[this.cloudSnaps.length - 1].id + 1,
+    };
+    if (!cloudSnap) {
+      throw new Error('CloudSnap non enregistré !');
+    } else {
+      this.cloudSnaps.push(cloudSnap);
+    }
+  }
 }
